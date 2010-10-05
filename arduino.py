@@ -57,16 +57,6 @@ class SerialPort(object):
             line = self.read_line()
             if line:
                 return line
-                #values = line.split('*')
-                #data = dict(
-                #        count = values[1],
-                #        time = values[2],
-                #        analog1 = values[3],
-                #        analog2 = values[4],
-                #        analog3 = values[5],
-                #        analog4 = values[6],
-                #    )
-
     
     
     def request_details(self, event_def):
