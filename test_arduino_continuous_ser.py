@@ -2,7 +2,7 @@ from unittest import TestCase
 from configobj import ConfigObj
 from os import environ
 from timeit import Timer
-import voyeur.arduino as arduino
+import arduino
 
 
 class TestSerial(TestCase):
@@ -11,7 +11,7 @@ class TestSerial(TestCase):
  
     def setUp(self):
         self.protocol = "Continuous"
-        configFile = environ.get("VOYEUR_CONFIG")
+        configFile = environ.get("CONFIG_ENV_VAR")
         self.port = arduino.SerialPort(configFile)
         config = ConfigObj(configFile)
         pde_hex_path = config['test']['continuous']['hex_path']
